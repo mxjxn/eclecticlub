@@ -33,9 +33,8 @@
       (handler request)
       (unauthorized {:error "not authorized"}))))
 
-(defn basic-auth []
-  (fn [handler]
-    (wrap-authentication handler (auth/basic-auth-backend))))
+(defn basic-auth [handler]
+    (wrap-authentication handler (auth/basic-auth-backend)))
 
 (defn wrap-base [handler]
   (-> ((:middleware defaults) handler)

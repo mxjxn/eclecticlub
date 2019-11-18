@@ -21,7 +21,7 @@
    ["/login"
     {:post
      {:summary "authenticate user"
-      :middleware [(basic-auth) auth]
+      :middleware [basic-auth auth]
       :handler login-handler
       :parameters {:body {:email string? :password string?}}}}]
 
